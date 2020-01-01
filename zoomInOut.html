@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body{
+            background:rgb(30 30 30);
+            color:white;
+        }
+        #pic{
+            position:relative;
+            width:300px;
+            height:180px;
+            transform:translate(100px 100px);
+            background-image:url(http://placehold.it/1200x720);
+            background-size:300px 180px;
+            background-position:center;
+            transition:3s;
+        }
+        .zoomPic{
+            background-size:1200px 720px !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="pic"></div>
+    <button id="zoom">Zoom</button>
+    <button id="pause">Pause</button>
+    <button id="zoomOut">Zoom out</button>
+</body>
+
+<script>
+    var pic=document.getElementById('pic'),
+        zoom=document.getElementById('zoom'),
+        pause=document.getElementById('pause'),
+        zoomOut=document.getElementById('zoomOut');
+
+    var picOriginalSize =window.getComputedStyle(pic).getPropertyValue('background-size');
+
+    zoom.onclick=function(){
+        if(!pic.classList.contains('zoomPic')){
+            pic.classList.add('zoomPic');
+        }
+    }
+    pause.onclick=function(){
+        var picSize=window.getComputedStyle(pic).getPropertyValue('background-size');
+        
+        pic.style.backgroundSize=picSize;
+        pic.classList.remove('zoomPic');
+    }
+    zoomOut.onclick=function(){
+        
+        pic.style.backgroundSize=picOriginalSize;
+        pic.classList.remove('zoomPic');
+    }
+</script>
+</html>
