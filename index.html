@@ -5,51 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-
-    <style>
-        body{
-            background:rgb(30 30 30);
-            color: white;
-        }
-
-        #test{
-            background:blue;
-            width:100px;
-            height:100px;
-            position:relative;
-            transition:3s;
-        }
-        .horizon{
-            margin-left:1000px !important;
-        }
-
-    </style>
 </head>
 <body>
-    <div id="test" ></div>
-    <button id="button">Play</button>
-    <div id="text"></div>
-
+    <li>
+        <a href="playPause.html">Play and Pause</a>
+    </li>
 </body>
-
-<script>
-    var test = document.getElementById('test');
-    var button =document.getElementById('button');
-
-    button.onclick=function(){
-        if(button.innerHTML==='Play'){
-            button.innerHTML='Pause';
-            test.classList.toggle('horizon');
-        }
-        else{
-            button.innerHTML="Play";
-            
-            var marginLeft= window.getComputedStyle(test).getPropertyValue('margin-left');
-            text.innerHTML=marginLeft;
-            test.style.marginLeft=marginLeft;
-            
-            test.classList.toggle('horizon');
-        }
-    }
-</script>
 </html>
